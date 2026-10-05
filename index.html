@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domaće & Ručno — Usluge, proizvodi i ljudi iz vašeg kraja</title>
+<meta name="description" content="Domaće & Ručno — pronađite majstore, usluge, domaće proizvode i ručne radove iz svog grada i mesta.">
+<style>
+:root{
+  --orange:#e85d04;
+  --orange2:#f48c06;
+  --cream:#fff8ed;
+  --dark:#25221e;
+  --green:#386641;
+  --muted:#6b6258;
+  --white:#fff;
+  --border:#eadbc8;
+  --shadow:0 12px 35px rgba(65,42,20,.10);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--dark);background:linear-gradient(135deg,#fff3df 0%,#ffe0b2 42%,#fff8ed 100%);line-height:1.5}
+a{text-decoration:none;color:inherit}
+.container{max-width:1180px;margin:auto;padding:0 20px}
+header{background:#fff;position:sticky;top:0;z-index:20;border-bottom:1px solid var(--border)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-weight:900;font-size:24px;color:var(--orange)}
+.logo span{color:var(--green)}
+nav{display:flex;gap:20px;align-items:center}
+nav a{font-weight:700}
+.btn{border:0;border-radius:12px;padding:13px 20px;font-weight:800;cursor:pointer;font-size:15px}
+.btn-primary{background:var(--orange);color:white;box-shadow:0 8px 18px rgba(232,93,4,.22)}
+.btn-primary:hover{background:#d94f00}
+.btn-light{background:white;border:1px solid var(--border)}
+.hero{padding:65px 0 45px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:35px;align-items:center}
+.badge{display:inline-block;background:#fff;border:1px solid #f1c99d;color:var(--orange);padding:8px 13px;border-radius:30px;font-weight:800}
+h1{font-size:clamp(40px,6vw,68px);line-height:1.02;margin:18px 0}
+h1 span{color:var(--orange)}
+.hero p{font-size:19px;color:var(--muted);max-width:650px}
+.searchbox{background:white;padding:22px;border-radius:22px;box-shadow:var(--shadow);margin-top:28px}
+.searchrow{display:grid;grid-template-columns:1.5fr 1fr 1fr auto;gap:10px}
+input,select{width:100%;padding:14px;border:1px solid var(--border);border-radius:10px;background:#fff;font-size:15px}
+.hero-card{background:linear-gradient(145deg,#e85d04,#f48c06);color:#fff;border-radius:30px;padding:34px;box-shadow:var(--shadow)}
+.hero-card h2{font-size:30px;margin-top:0}
+.hero-card ul{padding-left:20px}
+.section{padding:55px 0}
+.section h2{font-size:34px;margin:0 0 10px}
+.section-intro{color:var(--muted);margin-top:0}
+.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:25px}
+.cat{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:0 6px 20px rgba(65,42,20,.06);cursor:pointer}
+.cat:hover{transform:translateY(-2px);transition:.2s}
+.cat strong{display:block;font-size:18px;margin-bottom:5px}
+.cat small{color:var(--muted)}
+.filters{background:#fff;border-radius:22px;padding:25px;box-shadow:var(--shadow)}
+.filter-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.checks{display:flex;flex-wrap:wrap;gap:15px;margin:16px 0}
+.checks label{display:flex;gap:7px;align-items:center}
+.results{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:25px}
+.card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:0 6px 20px rgba(65,42,20,.06)}
+.card .tag{display:inline-block;background:#fff0df;color:var(--orange);border-radius:20px;padding:5px 9px;font-size:12px;font-weight:800}
+.card h3{margin:12px 0 5px}
+.card p{color:var(--muted)}
+.meta{font-size:14px;margin:6px 0}
+.cta{background:var(--green);color:white;border-radius:28px;padding:38px;margin:30px 0}
+.cta h2{font-size:34px;margin-top:0}
+.form{background:#fff;padding:28px;border-radius:22px;box-shadow:var(--shadow)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.full{grid-column:1/-1}
+footer{background:#25221e;color:white;padding:35px 0;margin-top:30px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer a{color:#f8d9b4;display:block;margin:7px 0}
+.notice{display:none;background:#e7f5e9;color:#245c2e;padding:14px;border-radius:10px;margin-top:15px;font-weight:700}
+@media(max-width:850px){
+ nav{display:none}.hero-grid{grid-template-columns:1fr}.searchrow,.filter-grid{grid-template-columns:1fr}.categories,.results{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){.categories,.results{grid-template-columns:1fr}.hero{padding-top:40px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#pocetna">DOMAĆE <span>&</span> RUČNO</a>
+    <nav>
+      <a href="#pretraga">Pretraga</a>
+      <a href="#kategorije">Kategorije</a>
+      <a href="#dodaj">Dodaj oglas</a>
+      <a href="#onama">O nama</a>
+    </nav>
+    <a class="btn btn-primary" href="#dodaj">NEMAM FIRMU</a>
+  </div>
+</header>
+
+<main id="pocetna">
+<section class="hero">
+<div class="container hero-grid">
+<div>
+  <span class="badge">🇷🇸 Ljudi, usluge i proizvodi iz vašeg kraja</span>
+  <h1>Pronađi ono što ti treba.<br><span>Pronađi svog čoveka.</span></h1>
+  <p>Majstori, domaći proizvodi, ručni radovi i usluge — na jednom mestu. Pretraži po kategoriji, gradu, mestu i onome što ti je potrebno.</p>
+  <div class="searchbox">
+    <div class="searchrow">
+      <input id="quickWhat" placeholder="Šta tražite? npr. keramičar">
+      <select id="quickCat"><option value="">Sve kategorije</option></select>
+      <select id="quickCity"><option value="">Svi gradovi</option></select>
+      <button class="btn btn-primary" onclick="quickSearch()">🔎 Traži</button>
+    </div>
+  </div>
+</div>
+<div class="hero-card">
+  <h2>🤲 NEMAM FIRMU,<br>ALI ZNAM DA RADIM.</h2>
+  <p>Ne moraš da imaš firmu da bi pokazao šta znaš da radiš.</p>
+  <ul><li>Predstavi svoju veštinu</li><li>Dodaj grad i mesto</li><li>Postavi fotografije i opis</li><li>Pronađi mušterije iz svog kraja</li></ul>
+  <a class="btn btn-light" href="#dodaj">Dodaj svoju ponudu →</a>
+</div>
+</div>
+</section>
+
+<section class="section" id="kategorije">
+<div class="container">
+<h2>Šta vam je potrebno?</h2>
+<p class="section-intro">Izaberite oblast ili pretražite sve ponude.</p>
+<div class="categories" id="categoryGrid"></div>
+</div>
+</section>
+
+<section class="section" id="pretraga">
+<div class="container">
+<h2>🔎 Kompletna pretraga</h2>
+<p class="section-intro">Obeležite šta vam je potrebno i pronađite odgovarajuću ponudu.</p>
+<div class="filters">
+<div class="filter-grid">
+<input id="q" placeholder="Pretraga — usluga, proizvod, majstor...">
+<select id="cat"><option value="">Sve kategorije</option></select>
+<select id="city"><option value="">Svi gradovi</option></select>
+<select id="place"><option value="">Sva mesta / naselja</option></select>
+<input id="min" type="number" placeholder="Cena od (din)">
+<input id="max" type="number" placeholder="Cena do (din)">
+<select id="type"><option value="">Sve vrste</option><option>Usluga</option><option>Proizvod</option><option>Ručni rad</option><option>Domaći proizvod</option><option>Majstor</option></select>
+<select id="delivery"><option value="">Način pružanja</option><option>Dolazak na adresu</option><option>Kod ponuđača</option><option>Dostava</option><option>Prodaja</option></select>
+</div>
+<div class="checks">
+<label><input type="checkbox" id="verified"> Samo provereni oglasi</label>
+<label><input type="checkbox" id="available"> Samo trenutno dostupni</label>
+<label><input type="checkbox" id="noFirm"> Nema firmu / fizičko lice</label>
+</div>
+<button class="btn btn-primary" onclick="search()">🔎 PRIKAŽI REZULTATE</button>
+<button class="btn btn-light" onclick="resetSearch()">Obriši filtere</button>
+</div>
+<div class="results" id="results"></div>
+</div>
+</section>
+
+<section class="section" id="dodaj">
+<div class="container">
+<div class="cta">
+<h2>🤲 Nemam firmu, ali znam da radim.</h2>
+<p>Ako kuvaš, šiješ, popravljaš, zidaš, kosiš, praviš nameštaj, čuvaš osobe ili imaš bilo koju korisnu veštinu — predstavi se.</p>
+</div>
+<div class="form">
+<h2>Dodaj svoju ponudu</h2>
+<p class="section-intro">Ovo je priprema za pravi sistem oglasa. U sledećem koraku povezaćemo unos sa bazom podataka i administracijom.</p>
+<div class="form-grid">
+<input placeholder="Ime i prezime / naziv ponude">
+<input placeholder="Telefon">
+<select><option>Izaberite kategoriju</option></select>
+<select><option>Izaberite grad</option></select>
+<input placeholder="Mesto / naselje">
+<input placeholder="Cena ili 'po dogovoru'">
+<select><option>Usluga</option><option>Proizvod</option><option>Ručni rad</option><option>Domaći proizvod</option><option>Majstor</option></select>
+<select><option>Način pružanja</option><option>Dolazak na adresu</option><option>Kod ponuđača</option><option>Dostava</option><option>Prodaja</option></select>
+<textarea class="full" rows="5" placeholder="Opišite šta radite ili šta prodajete..."></textarea>
+<div class="full"><label><input type="checkbox"> Nemam registrovanu firmu, ali želim da ponudim svoju uslugu/proizvod.</label></div>
+<button class="btn btn-primary full" onclick="demoSubmit()">POŠALJI PONUDU</button>
+</div>
+<div class="notice" id="notice">Ponuda je uspešno pripremljena. Sledeći korak je povezivanje sa pravom bazom podataka i sistemom odobravanja oglasa.</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="onama">
+<div class="container">
+<h2>O projektu Domaće & Ručno</h2>
+<p class="section-intro">Mesto gde mali proizvođači, majstori, kreativci i ljudi sa veštinom mogu da pronađu mušterije — bez obzira na to da li imaju firmu.</p>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer-grid">
+<div><strong>DOMAĆE & RUČNO</strong><p>Mesto za domaće, ručno i vredne ljude.</p></div>
+<div><strong>Brzi linkovi</strong><a href="#pretraga">Pretraga</a><a href="#kategorije">Kategorije</a><a href="#dodaj">Dodaj oglas</a></div>
+<div><strong>Informacije</strong><a href="#onama">O nama</a><a href="#">Pravila korišćenja</a><a href="#">Privatnost</a></div>
+</div>
+</footer>
+
+<script>
+const categories=[
+"Domaća kuhinja","Domaća zimnica","Kolači i torte","Pite i peciva","Domaći proizvodi","Med i pčelinji proizvodi",
+"Šivenje","Heklanje i pletenje","Ručni radovi od drveta","Ručni radovi od metala","Ručni nameštaj","Keramika i predmeti","Unikatni pokloni",
+"Dekoracije za proslave","Frizeri","Lepota i nega","Fotografija i video",
+"Krečenje i gletovanje","Keramičari","Zidari i građevinski radovi","Fizički radnici","Čišćenje kuće","Košenje trave i dvorište","Bašta i pomoć oko kuće",
+"Remont šporeta i peći","Električari","Vodoinstalateri","Popravka nameštaja","Auto usluge i popravke","Ostali majstori",
+"Čuvanje i pomoć osobama","Čuvanje dece","Pomoć u domaćinstvu","Prevoz i pomoć pri selidbi"
+];
+const cities=["Smederevo","Beograd","Novi Sad","Niš","Kragujevac","Požarevac","Pančevo","Čačak","Kraljevo","Subotica"];
+const demos=[
+{name:"Marko — Keramičarski radovi",cat:"Keramičari",city:"Smederevo",place:"Centar",type:"Usluga",desc:"Postavljanje pločica, kupatila i kuhinje. Dolazak na adresu.",price:0,firm:false},
+{name:"Ana — Domaće torte i kolači",cat:"Kolači i torte",city:"Smederevo",place:"Radinac",type:"Domaći proizvod",desc:"Torte za rođendane, slave i proslave. Izrada po dogovoru.",price:2500,firm:false},
+{name:"Petar — Ručni nameštaj",cat:"Ručni nameštaj",city:"Požarevac",place:"Centar",type:"Ručni rad",desc:"Izrada stolova, klupa i polica po meri.",price:15000,firm:false},
+{name:"Jelena — Dekoracije za proslave",cat:"Dekoracije za proslave",city:"Beograd",place:"Zemun",type:"Usluga",desc:"Dekoracije rođendana, krštenja i venčanja.",price:5000,firm:false},
+{name:"Milan — Košenje trave",cat:"Košenje trave i dvorište",city:"Smederevo",place:"Carina",type:"Usluga",desc:"Košenje i sređivanje dvorišta. Dolazak na adresu.",price:1500,firm:true},
+{name:"Dragana — Zimnica",cat:"Domaća zimnica",city:"Novi Sad",place:"Petrovaradin",type:"Domaći proizvod",desc:"Ajvar, turšija, džemovi i domaća zimnica.",price:800,firm:false}
+];
+
+function fillSelect(id,items,label){
+ const s=document.getElementById(id); if(!s)return;
+ items.forEach(x=>{const o=document.createElement("option");o.value=x;o.textContent=x;s.appendChild(o)});
+}
+fillSelect("quickCat",categories); fillSelect("cat",categories);
+fillSelect("quickCity",cities); fillSelect("city",cities);
+fillSelect("city",[]);
+const cg=document.getElementById("categoryGrid");
+categories.forEach((c,i)=>{
+ const d=document.createElement("div");d.className="cat";
+ d.innerHTML=`<strong>${["🍲","🧵","🪵","🎉","🏠","🔧","🤲"][i%7]} ${c}</strong><small>Pronađite ponude u ovoj kategoriji →</small>`;
+ d.onclick=()=>{document.getElementById("cat").value=c;location.hash="pretraga";search()};
+ cg.appendChild(d);
+});
+function render(items){
+ const r=document.getElementById("results");
+ r.innerHTML=items.length?items.map(x=>`<article class="card"><span class="tag">${x.type}</span><h3>${x.name}</h3><div class="meta">📍 ${x.city} — ${x.place}</div><p>${x.desc}</p><div class="meta">💰 ${x.price?x.price.toLocaleString("sr-RS")+" din":"Po dogovoru"}</div><div class="meta">🤲 ${x.firm?"Registrovana ponuda":"Fizičko lice / nema firmu"}</div><button class="btn btn-light">Pogledaj oglas</button></article>`).join(""):"<p>Nema rezultata za izabrane kriterijume.</p>";
+}
+function search(){
+ const q=document.getElementById("q").value.toLowerCase();
+ const cat=document.getElementById("cat").value,city=document.getElementById("city").value,type=document.getElementById("type").value;
+ const min=+document.getElementById("min").value||0,max=+document.getElementById("max").value||Infinity;
+ const noFirm=document.getElementById("noFirm").checked;
+ render(demos.filter(x=>(!q||(x.name+x.desc+x.cat).toLowerCase().includes(q))&&(!cat||x.cat===cat)&&(!city||x.city===city)&&(!type||x.type===type)&&(!x.price||x.price>=min)&&(!x.price||x.price<=max)&&(!noFirm||!x.firm)));
+}
+function quickSearch(){
+ document.getElementById("q").value=document.getElementById("quickWhat").value;
+ document.getElementById("cat").value=document.getElementById("quickCat").value;
+ document.getElementById("city").value=document.getElementById("quickCity").value;
+ location.hash="pretraga";search();
+}
+function resetSearch(){document.querySelectorAll("#pretraga input").forEach(x=>x.value=x.type==="checkbox"?false:"");document.querySelectorAll("#pretraga select").forEach(x=>x.value="");render(demos)}
+function demoSubmit(){document.getElementById("notice").style.display="block"}
+render(demos);
+</script>
+</body>
+</html>
