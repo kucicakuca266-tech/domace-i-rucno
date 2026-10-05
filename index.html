@@ -5,386 +5,592 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Domaće & Ručno — Majstori, usluge, domaći proizvodi i ručni radovi</title>
-
 <meta name="description" content="Domaće & Ručno je mesto za pronalaženje majstora, usluga, domaćih proizvoda i ručnih radova iz vašeg grada i kraja. Pronađite svog čoveka ili ponudite ono što znate da radite — i bez firme.">
-
 <link rel="canonical" href="https://kucicakuca266-tech.github.io/domace-i-rucno/">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#e85d04">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Domaće & Ručno — Majstori, usluge, domaći proizvodi i ručni radovi">
-<meta property="og:description" content="Pronađite majstore, usluge, domaće proizvode i ručne radove iz svog grada i kraja. NEMAM FIRMU, ALI ZNAM DA RADIM.">
+<meta property="og:description" content="Pronađite majstore, usluge, domaće proizvode i ručne radove iz svog grada i kraja.">
 <meta property="og:url" content="https://kucicakuca266-tech.github.io/domace-i-rucno/">
-<meta property="og:site_name" content="Domaće & Ručno">
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Domaće & Ručno — Majstori, usluge, proizvodi i ručni radovi">
-<meta name="twitter:description" content="Pronađite ono što vam treba ili ponudite ono što znate da radite — sa firmom ili bez firme.">
 <style>
 :root{
   --orange:#e85d04;
   --orange2:#f48c06;
-  --cream:#fff8ed;
+  --cream:#fff8df;
   --dark:#25221e;
   --green:#386641;
   --muted:#6b6258;
   --white:#fff;
   --border:#eadbc8;
-  --shadow:0 12px 35px rgba(65,42,20,.10);
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--dark);background:linear-gradient(135deg,#fff3df 0%,#ffe0b2 42%,#fff8ed 100%);line-height:1.5}
-a{text-decoration:none;color:inherit}
-.container{max-width:1180px;margin:auto;padding:0 20px}
-header{background:#fff;position:sticky;top:0;z-index:20;border-bottom:1px solid var(--border)}
-.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{font-weight:900;font-size:24px;color:var(--orange)}
-.logo span{color:var(--green)}
-nav{display:flex;gap:20px;align-items:center}
-nav a{font-weight:700}
-.btn{border:0;border-radius:12px;padding:13px 20px;font-weight:800;cursor:pointer;font-size:15px}
-.btn-primary{background:var(--orange);color:white;box-shadow:0 8px 18px rgba(232,93,4,.22)}
-.btn-primary:hover{background:#d94f00}
-.btn-light{background:white;border:1px solid var(--border)}
-.hero{padding:65px 0 45px}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:35px;align-items:center}
-.badge{display:inline-block;background:#fff;border:1px solid #f1c99d;color:var(--orange);padding:8px 13px;border-radius:30px;font-weight:800}
-h1{font-size:clamp(40px,6vw,68px);line-height:1.02;margin:18px 0}
-h1 span{color:var(--orange)}
-.hero p{font-size:19px;color:var(--muted);max-width:650px}
-.searchbox{background:white;padding:22px;border-radius:22px;box-shadow:var(--shadow);margin-top:28px}
-.searchrow{display:grid;grid-template-columns:1.5fr 1fr 1fr auto;gap:10px}
-input,select{width:100%;padding:14px;border:1px solid var(--border);border-radius:10px;background:#fff;font-size:15px}
-.hero-card{background:linear-gradient(145deg,#e85d04,#f48c06);color:#fff;border-radius:30px;padding:34px;box-shadow:var(--shadow)}
-.hero-card h2{font-size:30px;margin-top:0}
-.hero-card ul{padding-left:20px}
-.section{padding:55px 0}
-.section h2{font-size:34px;margin:0 0 10px}
-.section-intro{color:var(--muted);margin-top:0}
-.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:25px}
-.cat{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:0 6px 20px rgba(65,42,20,.06);cursor:pointer}
-.cat:hover{transform:translateY(-2px);transition:.2s}
-.cat strong{display:block;font-size:18px;margin-bottom:5px}
-.cat small{color:var(--muted)}
-.filters{background:#fff;border-radius:22px;padding:25px;box-shadow:var(--shadow)}
-.filter-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.checks{display:flex;flex-wrap:wrap;gap:15px;margin:16px 0}
-.checks label{display:flex;gap:7px;align-items:center}
-.results{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:25px}
-.card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:0 6px 20px rgba(65,42,20,.06)}
-.card .tag{display:inline-block;background:#fff0df;color:var(--orange);border-radius:20px;padding:5px 9px;font-size:12px;font-weight:800}
-.card h3{margin:12px 0 5px}
-.card p{color:var(--muted)}
-.meta{font-size:14px;margin:6px 0}
-.cta{background:var(--green);color:white;border-radius:28px;padding:38px;margin:30px 0}
-.cta h2{font-size:34px;margin-top:0}
-.form{background:#fff;padding:28px;border-radius:22px;box-shadow:var(--shadow)}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.full{grid-column:1/-1}
-footer{background:#25221e;color:white;padding:35px 0;margin-top:30px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
-footer a{color:#f8d9b4;display:block;margin:7px 0}
-.notice{display:none;background:#e7f5e9;color:#245c2e;padding:14px;border-radius:10px;margin-top:15px;font-weight:700}
-
-.auth-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.auth-status{font-size:13px;color:var(--muted);font-weight:700}.user-badge{background:#e7f5e9;color:#245c2e;padding:7px 10px;border-radius:20px;font-size:13px;font-weight:800}
-.modal-backdrop{position:fixed;inset:0;background:rgba(37,34,30,.55);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}.modal{width:min(460px,100%);background:#fff;border-radius:22px;padding:28px;box-shadow:0 25px 70px rgba(0,0,0,.25);position:relative}.modal h2{margin-top:0}.modal-close{position:absolute;right:15px;top:10px;border:0;background:transparent;font-size:28px;cursor:pointer;color:var(--muted)}.modal .field{margin:12px 0}.modal .field label{display:block;font-weight:800;margin-bottom:6px}.modal-message{padding:12px;border-radius:10px;background:#fff3df;color:#7a4100;display:none;margin:12px 0}.connected{color:#245c2e!important}.listing-note{background:#fff8ed;border:1px solid #f1c99d;padding:14px;border-radius:12px;margin:0 0 16px}.empty-state{grid-column:1/-1;background:#fff;border:1px dashed var(--border);border-radius:16px;padding:25px;text-align:center;color:var(--muted)}
-@media(max-width:850px){
- nav{display:none}.hero-grid{grid-template-columns:1fr}.searchrow,.filter-grid{grid-template-columns:1fr}.categories,.results{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--dark);
+  background:#ffe9ad;
 }
-@media(max-width:520px){.categories,.results{grid-template-columns:1fr}.hero{padding-top:40px}}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
+header{
+  position:sticky;top:0;z-index:50;
+  background:#fffdf0;
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  max-width:1240px;margin:auto;min-height:76px;
+  display:flex;align-items:center;gap:28px;padding:0 20px;
+}
+.logo{
+  font-weight:900;font-size:26px;color:var(--orange);
+  text-decoration:none;white-space:nowrap;
+}
+.logo span{color:var(--green)}
+.navlinks{display:flex;gap:24px;margin-left:auto}
+.navlinks a{text-decoration:none;font-weight:700}
+.auth-area{display:flex;align-items:center;gap:8px}
+.user-label{font-size:13px;color:var(--muted)}
+.btn{
+  border:0;border-radius:13px;padding:13px 18px;font-weight:800;
+  background:var(--orange);color:#fff;
+}
+.btn:hover{filter:brightness(.96)}
+.btn-outline{
+  background:#fffdf0;color:var(--dark);border:1px solid #f0d6b7;
+}
+.btn-small{padding:10px 14px;font-size:14px}
+.hero{
+  background:linear-gradient(120deg,#ffe8a9,#ffefc9);
+}
+.wrap{max-width:1240px;margin:auto;padding:0 20px}
+.hero-inner{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:55px;
+  padding:58px 0 70px;align-items:center;
+}
+.badge{
+  display:inline-block;padding:9px 14px;border:1px solid #f4c87c;
+  border-radius:30px;background:#fffdf0;color:var(--orange);font-weight:800;
+}
+h1{font-size:62px;line-height:1.02;margin:20px 0 18px}
+h1 .accent{color:var(--orange)}
+.lead{font-size:18px;line-height:1.55;color:#5f564c;max-width:680px}
+.searchbox{
+  margin-top:28px;background:#fffdf0;border-radius:22px;padding:14px;
+  display:grid;grid-template-columns:1.2fr 1fr 1fr auto;gap:10px;
+  box-shadow:0 14px 35px rgba(107,83,31,.12);
+}
+.field{
+  width:100%;padding:14px 15px;border:1px solid #edd6a9;
+  border-radius:12px;background:#fffdf0;outline:none;
+}
+.field:focus{border-color:var(--orange)}
+.hero-card{
+  background:linear-gradient(135deg,#f45d0b,#ff8417);
+  color:#fff;border-radius:28px;padding:34px;box-shadow:0 18px 40px rgba(151,67,4,.2);
+}
+.hero-card h2{font-size:31px;margin:0 0 22px}
+.hero-card p{font-size:17px;line-height:1.5}
+.hero-card li{margin:11px 0}
+.section{padding:58px 0}
+.section h2{font-size:36px;margin:0 0 10px}
+.section-sub{color:var(--muted);margin-bottom:28px}
+.grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+}
+.category{
+  background:#fffdf0;border:1px solid var(--border);border-radius:20px;
+  padding:22px;text-decoration:none;transition:.15s;
+}
+.category:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.06)}
+.category strong{font-size:18px}
+.category small{display:block;color:var(--muted);margin-top:8px}
+.account-banner{
+  background:#fffdf0;border:1px solid var(--border);border-radius:24px;
+  padding:26px;display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.form-card{
+  background:#fffdf0;border:1px solid var(--border);border-radius:24px;padding:28px;
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.form-grid .full{grid-column:1/-1}
+textarea.field{min-height:130px;resize:vertical}
+.checkbox{display:flex;align-items:center;gap:9px;margin:12px 0}
+.checkbox input{width:18px;height:18px}
+.listings{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+}
+.card{
+  background:#fffdf0;border:1px solid var(--border);border-radius:20px;padding:20px;
+}
+.card h3{margin:0 0 8px}
+.meta{color:var(--muted);font-size:14px;line-height:1.55}
+.price{font-weight:900;color:var(--orange);margin:14px 0}
+.tag{
+  display:inline-block;padding:6px 9px;border-radius:20px;background:#edf4e7;
+  color:var(--green);font-size:12px;font-weight:800;margin:3px 4px 3px 0;
+}
+.empty{
+  padding:30px;text-align:center;background:#fffdf0;border:1px dashed #d7c5a6;
+  border-radius:18px;color:var(--muted);
+}
+footer{background:#302a24;color:#fff;padding:35px 0;margin-top:30px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.modal{
+  position:fixed;inset:0;background:rgba(20,16,10,.55);display:none;
+  align-items:center;justify-content:center;z-index:100;padding:20px;
+}
+.modal.show{display:flex}
+.modal-box{
+  width:min(500px,100%);background:#fffdf0;border-radius:24px;padding:28px;
+  box-shadow:0 20px 70px rgba(0,0,0,.25);position:relative;
+}
+.close{
+  position:absolute;right:18px;top:14px;border:0;background:none;font-size:26px;
+}
+.tabs{display:flex;gap:8px;margin-bottom:20px}
+.tabs button{flex:1}
+.status{margin-top:12px;padding:12px;border-radius:12px;display:none}
+.status.ok{display:block;background:#e9f5e6;color:#245b2f}
+.status.err{display:block;background:#fde9e6;color:#9b2d20}
+.hidden{display:none!important}
+.spinner{opacity:.7}
+@media(max-width:900px){
+  .navlinks{display:none}
+  .hero-inner{grid-template-columns:1fr}
+  h1{font-size:46px}
+  .searchbox{grid-template-columns:1fr 1fr}
+  .searchbox .btn{grid-column:1/-1}
+  .grid,.listings{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  .nav{min-height:68px}
+  .logo{font-size:21px}
+  .auth-area .user-label{display:none}
+  .hero-inner{padding:35px 0 45px}
+  h1{font-size:39px}
+  .searchbox,.form-grid,.grid,.listings{grid-template-columns:1fr}
+  .form-grid .full{grid-column:auto}
+  .account-banner{flex-direction:column;align-items:flex-start}
+}
 </style>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
+
 <body>
 <header>
-  <div class="container nav">
-    <a class="logo" href="#pocetna">DOMAĆE <span>&</span> RUČNO</a>
-    <nav>
+  <div class="nav">
+    <a class="logo" href="#top">DOMAĆE <span>&amp; RUČNO</span></a>
+    <nav class="navlinks">
       <a href="#pretraga">Pretraga</a>
       <a href="#kategorije">Kategorije</a>
       <a href="#dodaj">Dodaj oglas</a>
       <a href="#onama">O nama</a>
     </nav>
-    <div class="auth-actions">
-      <span id="authStatus" class="auth-status">Niste prijavljeni</span>
-      <button class="btn btn-light" id="loginBtn" onclick="openAuth('login')">Prijava</button>
-      <button class="btn btn-primary" id="signupBtn" onclick="openAuth('signup')">Registracija</button>
-      <button class="btn btn-light" id="logoutBtn" onclick="logout()" style="display:none">Odjava</button>
+    <div class="auth-area">
+      <span id="userLabel" class="user-label">Niste prijavljeni</span>
+      <button class="btn btn-outline btn-small" id="loginBtn">Prijava</button>
+      <button class="btn btn-small" id="registerBtn">Registracija</button>
+      <button class="btn btn-small hidden" id="logoutBtn">Odjava</button>
     </div>
   </div>
 </header>
 
-<main id="pocetna">
+<main id="top">
 <section class="hero">
-<div class="container hero-grid">
-<div>
-  <span class="badge">🇷🇸 Ljudi, usluge i proizvodi iz vašeg kraja</span>
-  <h1>Pronađi ono što ti treba.<br><span>Pronađi svog čoveka.</span></h1>
-  <p>Majstori, domaći proizvodi, ručni radovi i usluge — na jednom mestu. Pretraži po kategoriji, gradu, mestu i onome što ti je potrebno.</p>
-  <div class="searchbox">
-    <div class="searchrow">
-      <input id="quickWhat" placeholder="Šta tražite? npr. keramičar">
-      <select id="quickCat"><option value="">Sve kategorije</option></select>
-      <select id="quickCity"><option value="">Svi gradovi</option></select>
-      <button class="btn btn-primary" onclick="quickSearch()">🔎 Traži</button>
+<div class="wrap hero-inner">
+  <div>
+    <span class="badge">🤝 Ljudi, usluge i proizvodi iz vašeg kraja</span>
+    <h1>Pronađi ono što ti treba.<br><span class="accent">Pronađi svog čoveka.</span></h1>
+    <p class="lead">Majstori, domaći proizvodi, ručni radovi i usluge — na jednom mestu. Pretraži po kategoriji, gradu i onome što ti je potrebno.</p>
+    <div class="searchbox" id="pretraga">
+      <input id="searchText" class="field" placeholder="Šta tražite? npr. keramičar">
+      <select id="searchCategory" class="field"></select>
+      <select id="searchCity" class="field"></select>
+      <button class="btn" id="searchBtn">🔎 Traži</button>
     </div>
   </div>
-</div>
-<div class="hero-card">
-  <h2>🤲 NEMAM FIRMU,<br>ALI ZNAM DA RADIM.</h2>
-  <p>Ne moraš da imaš firmu da bi pokazao šta znaš da radiš.</p>
-  <ul><li>Predstavi svoju veštinu</li><li>Dodaj grad i mesto</li><li>Postavi fotografije i opis</li><li>Pronađi mušterije iz svog kraja</li></ul>
-  <a class="btn btn-light" href="#dodaj">Dodaj svoju ponudu →</a>
-</div>
+
+  <div class="hero-card">
+    <h2>✊ NEMAM FIRMU,<br>ALI ZNAM DA RADIM.</h2>
+    <p>Ne moraš da imaš firmu da bi pokazao šta znaš da radiš.</p>
+    <ul>
+      <li>Predstavi svoju veštinu</li>
+      <li>Dodaj grad i mesto</li>
+      <li>Postavi fotografije i opis</li>
+      <li>Pronađi mušterije iz svog kraja</li>
+    </ul>
+    <button class="btn btn-outline" onclick="document.querySelector('#dodaj').scrollIntoView()">Dodaj svoju ponudu</button>
+  </div>
 </div>
 </section>
 
 <section class="section" id="kategorije">
-<div class="container">
-<h2>Šta vam je potrebno?</h2>
-<p class="section-intro">Izaberite oblast ili pretražite sve ponude.</p>
-<div class="categories" id="categoryGrid"></div>
+<div class="wrap">
+  <h2>Šta vam je potrebno?</h2>
+  <p class="section-sub">Izaberite oblast ili pretražite sve ponude.</p>
+  <div class="grid" id="categoryGrid"></div>
 </div>
 </section>
 
-<section class="section" id="pretraga">
-<div class="container">
-<h2>🔎 Kompletna pretraga</h2>
-<p class="section-intro">Obeležite šta vam je potrebno i pronađite odgovarajuću ponudu.</p>
-<div class="filters">
-<div class="filter-grid">
-<input id="q" placeholder="Pretraga — usluga, proizvod, majstor...">
-<select id="cat"><option value="">Sve kategorije</option></select>
-<select id="city"><option value="">Svi gradovi</option></select>
-<select id="place"><option value="">Sva mesta / naselja</option></select>
-<input id="min" type="number" placeholder="Cena od (din)">
-<input id="max" type="number" placeholder="Cena do (din)">
-<select id="type"><option value="">Sve vrste</option><option>Usluga</option><option>Proizvod</option><option>Ručni rad</option><option>Domaći proizvod</option><option>Majstor</option></select>
-<select id="delivery"><option value="">Način pružanja</option><option>Dolazak na adresu</option><option>Kod ponuđača</option><option>Dostava</option><option>Prodaja</option></select>
+<section class="section">
+<div class="wrap">
+  <div class="account-banner">
+    <div>
+      <span class="badge">🔐 KORISNIČKI NALOG</span>
+      <h2 style="margin:14px 0 6px">Napravi nalog i ponudi ono što znaš da radiš.</h2>
+      <p class="section-sub" style="margin:0">Registracija je besplatna. Oglas se objavljuje nakon provere.</p>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn" id="registerBtn2">📝 Registracija</button>
+      <button class="btn btn-outline" id="loginBtn2">🔑 Prijava</button>
+    </div>
+  </div>
 </div>
-<div class="checks">
-<label><input type="checkbox" id="verified"> Samo provereni oglasi</label>
-<label><input type="checkbox" id="available"> Samo trenutno dostupni</label>
-<label><input type="checkbox" id="noFirm"> Nema firmu / fizičko lice</label>
-</div>
-<button class="btn btn-primary" onclick="search()">🔎 PRIKAŽI REZULTATE</button>
-<button class="btn btn-light" onclick="resetSearch()">Obriši filtere</button>
-</div>
-<div class="results" id="results"></div>
+</section>
+
+<section class="section" id="rezultati">
+<div class="wrap">
+  <h2>Aktivne ponude</h2>
+  <p class="section-sub">Prikazuju se samo aktivni i provereni oglasi.</p>
+  <div id="listingGrid" class="listings">
+    <div class="empty">Učitavanje ponuda...</div>
+  </div>
 </div>
 </section>
 
 <section class="section" id="dodaj">
-<div class="container">
-<div class="cta">
-<h2>🤲 Nemam firmu, ali znam da radim.</h2>
-<p>Ako kuvaš, šiješ, popravljaš, zidaš, kosiš, praviš nameštaj, čuvaš osobe ili imaš bilo koju korisnu veštinu — predstavi se.</p>
-</div>
-<div class="form">
-<h2>Dodaj svoju ponudu</h2>
-<div class="listing-note"><strong>Važno:</strong> Za slanje oglasa potrebno je da budete prijavljeni. Oglasi se čuvaju u Supabase bazi i mogu postati javni nakon odobravanja.</div>
-<div class="form-grid">
-<input id="offerName" placeholder="Ime i prezime / naziv ponude">
-<input id="offerPhone" placeholder="Telefon">
-<select id="offerCat"><option value="">Izaberite kategoriju</option></select>
-<select id="offerCity"><option value="">Izaberite grad</option></select>
-<input id="offerPlace" placeholder="Mesto / naselje">
-<input id="offerPrice" type="number" min="0" placeholder="Cena (din) ili ostavite prazno">
-<select id="offerType"><option>Usluga</option><option>Proizvod</option><option>Ručni rad</option><option>Domaći proizvod</option><option>Majstor</option></select>
-<select id="offerDelivery"><option value="">Način pružanja</option><option>Dolazak na adresu</option><option>Kod ponuđača</option><option>Dostava</option><option>Prodaja</option></select>
-<textarea id="offerDesc" class="full" rows="5" placeholder="Opišite šta radite ili šta prodajete..."></textarea>
-<div class="full"><label><input id="offerNoFirm" type="checkbox" checked> Nemam registrovanu firmu, ali želim da ponudim svoju uslugu/proizvod.</label></div>
-<button class="btn btn-primary full" onclick="submitOffer()">POŠALJI PONUDU</button>
-</div>
-<div class="notice" id="notice"></div>
-</div>
+<div class="wrap">
+  <div class="form-card">
+    <span class="badge">✊ NEMAM FIRMU, ALI ZNAM DA RADIM</span>
+    <h2 style="margin-top:18px">Dodaj svoju ponudu</h2>
+    <p class="section-sub">Za slanje oglasa potrebno je da budeš prijavljen. Oglas se objavljuje tek nakon provere.</p>
+
+    <form id="listingForm">
+      <div class="form-grid">
+        <input id="ime" class="field" placeholder="Ime i prezime / naziv ponude" required>
+        <input id="telefon" class="field" placeholder="Telefon">
+        <input id="naslov" class="field" placeholder="Naslov oglasa" required>
+        <input id="email" class="field" placeholder="E-mail" type="email">
+        <select id="kategorija" class="field" required></select>
+        <select id="grad" class="field" required></select>
+        <input id="mesto" class="field" placeholder="Mesto / naselje">
+        <input id="cena" class="field" placeholder="Cena ili 'po dogovoru'" type="text">
+        <select id="tip" class="field">
+          <option value="Usluga">Usluga</option>
+          <option value="Proizvod">Proizvod</option>
+          <option value="Ručni rad">Ručni rad</option>
+          <option value="Domaći proizvod">Domaći proizvod</option>
+          <option value="Majstor">Majstor</option>
+        </select>
+        <select id="nacin" class="field">
+          <option value="">Način pružanja / preuzimanja</option>
+          <option value="Kod mene">Kod mene</option>
+          <option value="Dolazim na adresu">Dolazim na adresu</option>
+          <option value="Lično preuzimanje">Lično preuzimanje</option>
+          <option value="Dostava">Dostava</option>
+          <option value="Po dogovoru">Po dogovoru</option>
+        </select>
+        <textarea id="opis" class="field full" placeholder="Opišite šta radite ili šta prodajete..." required></textarea>
+        <label class="checkbox full">
+          <input id="nemaFirmu" type="checkbox" checked>
+          Nemam registrovanu firmu, ali želim da ponudim svoju uslugu/proizvod.
+        </label>
+      </div>
+      <button class="btn" style="width:100%;margin-top:8px" type="submit">POŠALJI PONUDU</button>
+      <div id="listingStatus" class="status"></div>
+    </form>
+  </div>
 </div>
 </section>
 
 <section class="section" id="onama">
-<div class="container">
-<h2>O projektu Domaće & Ručno</h2>
-<p class="section-intro">Mesto gde mali proizvođači, majstori, kreativci i ljudi sa veštinom mogu da pronađu mušterije — bez obzira na to da li imaju firmu.</p>
+<div class="wrap">
+  <div class="form-card">
+    <h2>O nama</h2>
+    <p class="lead">Domaće &amp; Ručno je mesto gde ljudi mogu da pronađu majstora, uslugu, domaći proizvod ili ručni rad iz svog kraja — bez obzira na to da li ponuđač ima firmu.</p>
+    <p class="section-sub">Cilj je jednostavan: da znanje, rad i domaći proizvodi ljudi iz Srbije budu lakše dostupni onima kojima su potrebni.</p>
+  </div>
 </div>
 </section>
 </main>
 
-
-<div class="modal-backdrop" id="authModal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeAuth()" aria-label="Zatvori">×</button>
-    <h2 id="authTitle">Prijava</h2>
-    <p class="section-intro" id="authIntro">Prijavite se da biste mogli da postavite svoju ponudu.</p>
-    <div class="modal-message" id="authMessage"></div>
-    <div class="field" id="nameField" style="display:none"><label>Ime i prezime</label><input id="authName" placeholder="Vaše ime"></div>
-    <div class="field"><label>Email</label><input id="authEmail" type="email" placeholder="vas@email.com" autocomplete="email"></div>
-    <div class="field"><label>Lozinka</label><input id="authPassword" type="password" placeholder="Najmanje 6 karaktera" autocomplete="current-password"></div>
-    <button class="btn btn-primary" id="authSubmit" style="width:100%" onclick="submitAuth()">Prijavi se</button>
-    <p style="text-align:center;margin-bottom:0"><button class="btn btn-light" id="switchAuth" onclick="switchAuthMode()">Nemate nalog? Registrujte se</button></p>
-  </div>
-</div>
-
 <footer>
-<div class="container footer-grid">
-<div><strong>DOMAĆE & RUČNO</strong><p>Mesto za domaće, ručno i vredne ljude.</p></div>
-<div><strong>Brzi linkovi</strong><a href="#pretraga">Pretraga</a><a href="#kategorije">Kategorije</a><a href="#dodaj">Dodaj oglas</a></div>
-<div><strong>Informacije</strong><a href="#onama">O nama</a><a href="#">Pravila korišćenja</a><a href="#">Privatnost</a></div>
+<div class="wrap footer-inner">
+  <div><strong>DOMAĆE &amp; RUČNO</strong><br><span style="opacity:.75">NEMAM FIRMU, ALI ZNAM DA RADIM.</span></div>
+  <div style="opacity:.75">© 2026 Domaće &amp; Ručno</div>
 </div>
 </footer>
 
+<div class="modal" id="authModal">
+  <div class="modal-box">
+    <button class="close" id="closeModal">×</button>
+    <div class="tabs">
+      <button class="btn" id="tabLogin">Prijava</button>
+      <button class="btn btn-outline" id="tabRegister">Registracija</button>
+    </div>
+
+    <form id="authForm">
+      <input id="authName" class="field" placeholder="Ime i prezime" style="margin-bottom:10px">
+      <input id="authEmail" class="field" placeholder="E-mail" type="email" required style="margin-bottom:10px">
+      <input id="authPassword" class="field" placeholder="Lozinka (najmanje 6 karaktera)" type="password" minlength="6" required>
+      <button class="btn" style="width:100%;margin-top:14px" type="submit" id="authSubmit">PRIJAVI SE</button>
+      <div id="authStatus" class="status"></div>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-const SUPABASE_URL = "https://lowajbnbdzsxvqxnjtoq.supabase.co";
-// OVAJ RED POPUNI svojim Publishable key-om koji si kopirao iz Supabase > Settings > API Keys.
+/*
+  Domaće & Ručno — Supabase povezivanje
+  Koristi se samo PUBLISHABLE key. Secret key nikada ne stavljati u ovaj fajl.
+*/
+const SUPABASE_URL = "https://lowajbnbdzsxvqnxjtoq.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_k0PvrJ-MoCO9sL90CFrhFw_neDaLWY5";
 
-const categories=[
-"Domaća kuhinja","Domaća zimnica","Kolači i torte","Pite i peciva","Domaći proizvodi","Med i pčelinji proizvodi",
-"Šivenje","Heklanje i pletenje","Ručni radovi od drveta","Ručni radovi od metala","Ručni nameštaj","Keramika i predmeti","Unikatni pokloni",
-"Dekoracije za proslave","Frizeri","Lepota i nega","Fotografija i video",
-"Krečenje i gletovanje","Keramičari","Zidari i građevinski radovi","Fizički radnici","Čišćenje kuće","Košenje trave i dvorište","Bašta i pomoć oko kuće",
-"Remont šporeta i peći","Električari","Vodoinstalateri","Popravka nameštaja","Auto usluge i popravke","Ostali majstori",
-"Čuvanje i pomoć osobama","Čuvanje dece","Pomoć u domaćinstvu","Prevoz i pomoć pri selidbi"
-];
-const cities=["Smederevo","Beograd","Novi Sad","Niš","Kragujevac","Požarevac","Pančevo","Čačak","Kraljevo","Subotica"];
-const demos=[
-{name:"Demo — Keramičarski radovi",cat:"Keramičari",city:"Smederevo",place:"Centar",type:"Usluga",desc:"Primer oglasa. Pravi oglasi će se učitavati iz Supabase baze.",price:0,firm:false},
-{name:"Demo — Domaće torte i kolači",cat:"Kolači i torte",city:"Smederevo",place:"Radinac",type:"Domaći proizvod",desc:"Primer oglasa za prikaz izgleda kartice.",price:2500,firm:false}
-];
-
-let sb=null;
-let currentUser=null;
-let authMode="login";
-let realDataLoaded=false;
-
-function fillSelect(id,items,label){
- const s=document.getElementById(id); if(!s)return;
- items.forEach(x=>{const o=document.createElement("option");o.value=x;o.textContent=x;s.appendChild(o)});
-}
-fillSelect("quickCat",categories); fillSelect("cat",categories); fillSelect("offerCat",categories);
-fillSelect("quickCity",cities); fillSelect("city",cities); fillSelect("offerCity",cities);
-
-const cg=document.getElementById("categoryGrid");
-categories.forEach((c,i)=>{
- const d=document.createElement("div");d.className="cat";
- d.innerHTML=`<strong>${["🍲","🧵","🪵","🎉","🏠","🔧","🤲"][i%7]} ${c}</strong><small>Pronađite ponude u ovoj kategoriji →</small>`;
- d.onclick=()=>{document.getElementById("cat").value=c;location.hash="pretraga";search()};
- cg.appendChild(d);
+const { createClient } = window.supabase;
+const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
+  auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
 });
 
-function escapeHtml(value){
- return String(value ?? "").replace(/[&<>'"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;","\"":"&quot;"}[c]));
+const CATEGORIES = [
+  "Domaća kuhinja","Domaća zimnica","Kolači i torte","Pite i peciva","Domaći proizvodi","Med i pčelinji proizvodi",
+  "Šivenje","Heklanje i pletenje","Ručni radovi od drveta","Ručni radovi od metala","Ručni nameštaj","Keramika i predmeti","Unikatni pokloni",
+  "Dekoracije za proslave","Frizeri","Lepota i nega","Fotografija i video",
+  "Krečenje i gletovanje","Keramičari","Zidari i građevinski radovi","Fizički radnici","Čišćenje kuće","Košenje trave i dvorište","Bašta i pomoć oko kuće",
+  "Remont šporeta i peći","Električari","Vodoinstalateri","Popravka nameštaja","Auto usluge i popravke","Ostali majstori",
+  "Čuvanje i pomoć osobama","Čuvanje dece","Pomoć u domaćinstvu","Prevoz i pomoć pri selidbi"
+];
+
+const CITIES = [
+  "Beograd","Novi Sad","Niš","Kragujevac","Subotica","Pančevo","Čačak","Kraljevo","Smederevo","Požarevac",
+  "Šabac","Užice","Valjevo","Zrenjanin","Sombor","Leskovac","Vranje","Jagodina","Kruševac","Novi Pazar","Ostalo"
+];
+
+let authMode = "login";
+
+function fillSelect(id, values, firstText){
+  const el = document.getElementById(id);
+  el.innerHTML = `<option value="">${firstText}</option>` +
+    values.map(v => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join("");
 }
-function normalizeRow(x){
- return {name:x.naslov || x.ime || "Ponuda", cat:x.kategorija || "", city:x.grad || "", place:x.mesto || "", type:x.tip || "Usluga", desc:x.opis || "", price:Number(x.cena)||0, firm:x.nema_firmu===false};
-}
-function render(items){
- const r=document.getElementById("results");
- if(!items.length){r.innerHTML='<div class="empty-state">Nema rezultata za izabrane kriterijume.</div>';return;}
- r.innerHTML=items.map(x=>`<article class="card"><span class="tag">${escapeHtml(x.type)}</span><h3>${escapeHtml(x.name)}</h3><div class="meta">📍 ${escapeHtml(x.city)}${x.place?" — "+escapeHtml(x.place):""}</div><p>${escapeHtml(x.desc)}</p><div class="meta">💰 ${x.price?x.price.toLocaleString("sr-RS")+" din":"Po dogovoru"}</div><div class="meta">🤲 ${x.firm?"Registrovana ponuda":"Fizičko lice / nema firmu"}</div></article>`).join("");
-}
-function currentFilters(){
- return {
- q:document.getElementById("q").value.trim().toLowerCase(),
- cat:document.getElementById("cat").value, city:document.getElementById("city").value,
- place:document.getElementById("place").value.trim().toLowerCase(), type:document.getElementById("type").value,
- min:+document.getElementById("min").value||0, max:+document.getElementById("max").value||Infinity,
- noFirm:document.getElementById("noFirm").checked
- };
-}
-async function loadOffers(){
- if(!sb)return false;
- const {data,error}=await sb.from("oglasi").select("id,ime,naslov,opis,kategorija,grad,mesto,cena,tip,nema_firmu,verifikovan,aktivan,created_at").eq("aktivan",true).eq("verifikovan",true).order("created_at",{ascending:false});
- if(error){console.warn("Supabase oglasi:",error);return false;}
- window.offerData=(data||[]).map(normalizeRow); realDataLoaded=true; search(); return true;
-}
-function search(){
- const f=currentFilters();
- const data=window.offerData || demos;
- const filtered=data.filter(x=>(!f.q||(x.name+" "+x.desc+" "+x.cat+" "+x.city).toLowerCase().includes(f.q))&&(!f.cat||x.cat===f.cat)&&(!f.city||x.city===f.city)&&(!f.place||x.place.toLowerCase().includes(f.place))&&(!f.type||x.type===f.type)&&(!x.price||x.price>=f.min)&&(!x.price||x.price<=f.max)&&(!f.noFirm||!x.firm));
- render(filtered);
-}
-function quickSearch(){
- document.getElementById("q").value=document.getElementById("quickWhat").value;
- document.getElementById("cat").value=document.getElementById("quickCat").value;
- document.getElementById("city").value=document.getElementById("quickCity").value;
- location.hash="pretraga";search();
-}
-function resetSearch(){
- document.querySelectorAll("#pretraga input").forEach(x=>{if(x.type==="checkbox")x.checked=false;else x.value=""});
- document.querySelectorAll("#pretraga select").forEach(x=>x.value="");search();
+function escapeHtml(v){
+  return String(v ?? "").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
 }
 
-function setAuthStatus(user){
- currentUser=user||null;
- const status=document.getElementById("authStatus");
- document.getElementById("loginBtn").style.display=user?"none":"inline-block";
- document.getElementById("signupBtn").style.display=user?"none":"inline-block";
- document.getElementById("logoutBtn").style.display=user?"inline-block":"none";
- if(user){status.textContent=user.email||"Prijavljeni korisnik";status.className="user-badge";status.title="Prijavljeni ste";}else{status.textContent="Niste prijavljeni";status.className="auth-status";}
+fillSelect("searchCategory", CATEGORIES, "Sve kategorije");
+fillSelect("searchCity", CITIES, "Svi gradovi");
+fillSelect("kategorija", CATEGORIES, "Izaberite kategoriju");
+fillSelect("grad", CITIES, "Izaberite grad");
+
+const categoryGrid = document.getElementById("categoryGrid");
+categoryGrid.innerHTML = CATEGORIES.map(c =>
+  `<a class="category" href="#rezultati" data-category="${escapeHtml(c)}">
+    <strong>${escapeHtml(c)}</strong>
+    <small>Pronađite ponude u ovoj kategoriji →</small>
+  </a>`
+).join("");
+
+categoryGrid.addEventListener("click", e => {
+  const card = e.target.closest(".category");
+  if(!card) return;
+  document.getElementById("searchCategory").value = card.dataset.category;
+  loadListings();
+});
+
+function showStatus(el, message, ok=false){
+  el.textContent = message;
+  el.className = "status " + (ok ? "ok" : "err");
 }
 function openAuth(mode="login"){
- authMode=mode; document.getElementById("authModal").style.display="flex"; updateAuthModal();
+  authMode = mode;
+  document.getElementById("authModal").classList.add("show");
+  document.getElementById("authName").classList.toggle("hidden", mode !== "register");
+  document.getElementById("authSubmit").textContent = mode === "login" ? "PRIJAVI SE" : "REGISTRUJ SE";
+  document.getElementById("authStatus").className = "status";
 }
-function closeAuth(){document.getElementById("authModal").style.display="none";document.getElementById("authMessage").style.display="none";}
-function switchAuthMode(){authMode=authMode==="login"?"signup":"login";updateAuthModal();}
-function updateAuthModal(){
- const signup=authMode==="signup";
- document.getElementById("authTitle").textContent=signup?"Registracija":"Prijava";
- document.getElementById("authIntro").textContent=signup?"Napravite nalog da biste mogli da postavljate svoje ponude.":"Prijavite se da biste mogli da postavite svoju ponudu.";
- document.getElementById("nameField").style.display=signup?"block":"none";
- document.getElementById("authSubmit").textContent=signup?"Napravi nalog":"Prijavi se";
- document.getElementById("switchAuth").textContent=signup?"Već imate nalog? Prijavite se":"Nemate nalog? Registrujte se";
- document.getElementById("authMessage").style.display="none";
-}
-function authMessage(text,isError=false){const el=document.getElementById("authMessage");el.textContent=text;el.style.display="block";el.style.background=isError?"#fde8e8":"#e7f5e9";el.style.color=isError?"#8a1c1c":"#245c2e";}
-async function submitAuth(){
- if(!sb){authMessage("Supabase ključ još nije ubačen u index.html.",true);return;}
- const email=document.getElementById("authEmail").value.trim();
- const password=document.getElementById("authPassword").value;
- if(!email||password.length<6){authMessage("Unesite ispravan email i lozinku od najmanje 6 karaktera.",true);return;}
- const btn=document.getElementById("authSubmit");btn.disabled=true;
- try{
-   if(authMode==="signup"){
-     const name=document.getElementById("authName").value.trim();
-     const {data,error}=await sb.auth.signUp({email,password,options:{data:{full_name:name}}});
-     if(error)throw error;
-     if(data.session){authMessage("Nalog je napravljen i prijavljeni ste.");setAuthStatus(data.user);setTimeout(closeAuth,800);}else{authMessage("Nalog je napravljen. Proverite email i potvrdite adresu, pa se zatim prijavite.");}
-   }else{
-     const {data,error}=await sb.auth.signInWithPassword({email,password});
-     if(error)throw error;
-     setAuthStatus(data.user);closeAuth();
-   }
- }catch(e){authMessage(e.message||"Došlo je do greške.",true);}finally{btn.disabled=false;}
-}
-async function logout(){if(sb)await sb.auth.signOut();setAuthStatus(null);}
+function closeAuth(){ document.getElementById("authModal").classList.remove("show"); }
 
-async function submitOffer(){
- if(!sb){openAuth("login");authMessage("Supabase ključ još nije ubačen u index.html.",true);return;}
- if(!currentUser){openAuth("login");return;}
- const naslov=document.getElementById("offerName").value.trim();
- const kategorija=document.getElementById("offerCat").value;
- const grad=document.getElementById("offerCity").value;
- const opis=document.getElementById("offerDesc").value.trim();
- if(!naslov||!kategorija||!grad||!opis){showNotice("Popunite naziv ponude, kategoriju, grad i opis.",true);return;}
- const payload={ime:document.getElementById("authName").value.trim()||currentUser.email,naslov,opis,kategorija,grad,mesto:document.getElementById("offerPlace").value.trim()||null,cena:document.getElementById("offerPrice").value?Number(document.getElementById("offerPrice").value):null,tip:document.getElementById("offerType").value,nacin_usluge:document.getElementById("offerDelivery").value||null,telefon:document.getElementById("offerPhone").value.trim()||null,nema_firmu:document.getElementById("offerNoFirm").checked,verifikovan:false,aktivan:true};
- const {error}=await sb.from("oglasi").insert(payload);
- if(error){showNotice("Oglas nije sačuvan. Najverovatnije još nije napravljena RLS dozvola za INSERT oglasa. Greška: "+error.message,true);return;}
- showNotice("Oglas je sačuvan i čeka odobravanje administratora. Nakon odobrenja biće vidljiv u pretrazi.",false);
- document.getElementById("offerName").value="";document.getElementById("offerPhone").value="";document.getElementById("offerPlace").value="";document.getElementById("offerPrice").value="";document.getElementById("offerDesc").value="";
-}
-function showNotice(text,error=false){const n=document.getElementById("notice");n.textContent=text;n.style.display="block";n.style.background=error?"#fde8e8":"#e7f5e9";n.style.color=error?"#8a1c1c":"#245c2e";}
+document.getElementById("loginBtn").onclick = () => openAuth("login");
+document.getElementById("registerBtn").onclick = () => openAuth("register");
+document.getElementById("loginBtn2").onclick = () => openAuth("login");
+document.getElementById("registerBtn2").onclick = () => openAuth("register");
+document.getElementById("closeModal").onclick = closeAuth;
+document.getElementById("tabLogin").onclick = () => openAuth("login");
+document.getElementById("tabRegister").onclick = () => openAuth("register");
 
-async function initSupabase(){
- if(!SUPABASE_PUBLISHABLE_KEY || SUPABASE_PUBLISHABLE_KEY.includes("OVDE_NALEPI")){setAuthStatus(null);window.offerData=demos;search();return;}
- sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
- const {data:{session}}=await sb.auth.getSession();setAuthStatus(session?.user||null);
- sb.auth.onAuthStateChange((_event,session)=>setAuthStatus(session?.user||null));
- const ok=await loadOffers();
- if(!ok){window.offerData=demos;search();}
+document.getElementById("authForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const email = document.getElementById("authEmail").value.trim();
+  const password = document.getElementById("authPassword").value;
+  const name = document.getElementById("authName").value.trim();
+  const status = document.getElementById("authStatus");
+  status.className = "status";
+
+  if(authMode === "register"){
+    const { data, error } = await supabase.auth.signUp({
+      email, password,
+      options: { data: { ime: name } }
+    });
+    if(error){
+      showStatus(status, error.message);
+      return;
+    }
+    if(data.session){
+      showStatus(status, "Registracija je uspešna. Prijavljeni ste.", true);
+      setTimeout(closeAuth, 900);
+    }else{
+      showStatus(status, "Registracija je uspešna. Proverite e-mail i potvrdite adresu pre prijave.", true);
+    }
+  }else{
+    const { error } = await supabase.auth.signInWithPassword({email,password});
+    if(error){
+      showStatus(status, error.message);
+      return;
+    }
+    showStatus(status, "Uspešno ste prijavljeni.", true);
+    setTimeout(closeAuth, 700);
+  }
+});
+
+document.getElementById("logoutBtn").onclick = async () => {
+  await supabase.auth.signOut();
+  updateAuthUI(null);
+};
+
+function updateAuthUI(session){
+  const label = document.getElementById("userLabel");
+  const login = document.getElementById("loginBtn");
+  const register = document.getElementById("registerBtn");
+  const logout = document.getElementById("logoutBtn");
+  if(session?.user){
+    label.textContent = session.user.email || "Prijavljeni korisnik";
+    login.classList.add("hidden");
+    register.classList.add("hidden");
+    logout.classList.remove("hidden");
+  }else{
+    label.textContent = "Niste prijavljeni";
+    login.classList.remove("hidden");
+    register.classList.remove("hidden");
+    logout.classList.add("hidden");
+  }
 }
 
-window.offerData=demos;render(demos);initSupabase();
+async function loadListings(){
+  const grid = document.getElementById("listingGrid");
+  grid.innerHTML = `<div class="empty">Učitavanje ponuda...</div>`;
+
+  let query = supabase
+    .from("oglasi")
+    .select("id,ime,telefon,naslov,opis,kategorija,grad,mesto,cena,tip,nacin_usluge,nema_firmu,created_at")
+    .eq("aktivan", true)
+    .eq("verifikovan", true)
+    .order("created_at", {ascending:false})
+    .limit(60);
+
+  const text = document.getElementById("searchText").value.trim();
+  const cat = document.getElementById("searchCategory").value;
+  const city = document.getElementById("searchCity").value;
+
+  if(cat) query = query.eq("kategorija", cat);
+  if(city) query = query.eq("grad", city);
+  if(text){
+    const safe = text.replace(/[%_]/g, "");
+    query = query.or(`naslov.ilike.%${safe}%,opis.ilike.%${safe}%,kategorija.ilike.%${safe}%,grad.ilike.%${safe}%`);
+  }
+
+  const { data, error } = await query;
+  if(error){
+    grid.innerHTML = `<div class="empty">Nije moguće učitati oglase. Proverite Supabase podešavanja.</div>`;
+    console.error(error);
+    return;
+  }
+  if(!data?.length){
+    grid.innerHTML = `<div class="empty">Trenutno nema proverenih oglasa za zadatu pretragu.</div>`;
+    return;
+  }
+
+  grid.innerHTML = data.map(o => `
+    <article class="card">
+      <span class="tag">${escapeHtml(o.kategorija)}</span>
+      ${o.nema_firmu ? `<span class="tag">Bez firme</span>` : ""}
+      <h3>${escapeHtml(o.naslov)}</h3>
+      <div class="meta"><strong>${escapeHtml(o.ime)}</strong><br>📍 ${escapeHtml(o.grad)}${o.mesto ? ", " + escapeHtml(o.mesto) : ""}</div>
+      ${o.cena ? `<div class="price">${escapeHtml(o.cena)}</div>` : ""}
+      <p>${escapeHtml(o.opis || "")}</p>
+      ${o.tip ? `<span class="tag">${escapeHtml(o.tip)}</span>` : ""}
+      ${o.nacin_usluge ? `<span class="tag">${escapeHtml(o.nacin_usluge)}</span>` : ""}
+      ${o.telefon ? `<p style="margin-top:15px"><strong>📞 ${escapeHtml(o.telefon)}</strong></p>` : ""}
+    </article>
+  `).join("");
+}
+
+document.getElementById("searchBtn").onclick = loadListings;
+document.getElementById("searchText").addEventListener("keydown", e => {
+  if(e.key === "Enter") loadListings();
+});
+
+document.getElementById("listingForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const status = document.getElementById("listingStatus");
+  const { data: { session } } = await supabase.auth.getSession();
+
+  if(!session){
+    showStatus(status, "Prvo se prijavite ili registrujte nalog.");
+    openAuth("login");
+    return;
+  }
+
+  const payload = {
+    ime: document.getElementById("ime").value.trim(),
+    telefon: document.getElementById("telefon").value.trim() || null,
+    email: document.getElementById("email").value.trim() || session.user.email,
+    naslov: document.getElementById("naslov").value.trim(),
+    opis: document.getElementById("opis").value.trim(),
+    kategorija: document.getElementById("kategorija").value,
+    grad: document.getElementById("grad").value,
+    mesto: document.getElementById("mesto").value.trim() || null,
+    cena: null,
+    tip: document.getElementById("tip").value || null,
+    nacin_usluge: document.getElementById("nacin").value || null,
+    fotografija_url: null,
+    nema_firmu: document.getElementById("nemaFirmu").checked,
+    verifikovan: false,
+    aktivan: true
+  };
+
+  const cenaText = document.getElementById("cena").value.trim();
+  if(cenaText){
+    const number = Number(cenaText.replace(",", ".").replace(/[^\d.]/g, ""));
+    payload.cena = Number.isFinite(number) ? number : null;
+  }
+
+  const { error } = await supabase.from("oglasi").insert(payload);
+
+  if(error){
+    console.error(error);
+    showStatus(status, "Oglas nije poslat. Potrebno je da uključimo INSERT dozvolu u Supabase-u.");
+    return;
+  }
+
+  showStatus(status, "Oglas je uspešno poslat i čeka proveru administratora.", true);
+  e.target.reset();
+  document.getElementById("nemaFirmu").checked = true;
+});
+
+supabase.auth.onAuthStateChange((_event, session) => {
+  updateAuthUI(session);
+});
+
+(async function init(){
+  const { data: { session } } = await supabase.auth.getSession();
+  updateAuthUI(session);
+  await loadListings();
+})();
 </script>
 </body>
 </html>
