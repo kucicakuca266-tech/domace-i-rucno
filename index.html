@@ -349,11 +349,11 @@ footer{background:#302a24;color:#fff;padding:35px 0;margin-top:30px}
   Domaće & Ručno — Supabase povezivanje
   Koristi se samo PUBLISHABLE key. Secret key nikada ne stavljati u ovaj fajl.
 */
-const SUPABASE_URL = "https://lowajnbndzsxvqxnjtoq.supabase.co";
+const SUPABASE_URL = "https://lowajbnbdzsxvqnxjtoq.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_k0PvrJ-MoCO9sL90CFrhFw_neDaLWY5";
 
 const { createClient } = window.supabase;
-const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
+const supabaseClient = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
   auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
 });
 
@@ -432,7 +432,7 @@ document.getElementById("authForm").addEventListener("submit", async e => {
   status.className = "status";
 
   if(authMode === "register"){
-    const { data, error } = await supabase.auth.signUp({
+    const { data, error } = await supabaseClient.auth.signUp({
       email, password,
       options: { data: { ime: name } }
     });
@@ -447,7 +447,7 @@ document.getElementById("authForm").addEventListener("submit", async e => {
       showStatus(status, "Registracija je uspešna. Proverite e-mail i potvrdite adresu pre prijave.", true);
     }
   }else{
-    const { error } = await supabase.auth.signInWithPassword({email,password});
+    const { error } = await supabaseClient.auth.signInWithPassword({email,password});
     if(error){
       showStatus(status, error.message);
       return;
@@ -458,7 +458,7 @@ document.getElementById("authForm").addEventListener("submit", async e => {
 });
 
 document.getElementById("logoutBtn").onclick = async () => {
-  await supabase.auth.signOut();
+  await supabaseClient.auth.signOut();
   updateAuthUI(null);
 };
 
@@ -484,7 +484,7 @@ async function loadListings(){
   const grid = document.getElementById("listingGrid");
   grid.innerHTML = `<div class="empty">Učitavanje ponuda...</div>`;
 
-  let query = supabase
+  let query = supabaseClient
     .from("oglasi")
     .select("id,ime,telefon,naslov,opis,kategorija,grad,mesto,cena,tip,nacin_usluge,nema_firmu,created_at")
     .eq("aktivan", true)
@@ -537,7 +537,7 @@ document.getElementById("searchText").addEventListener("keydown", e => {
 document.getElementById("listingForm").addEventListener("submit", async e => {
   e.preventDefault();
   const status = document.getElementById("listingStatus");
-  const { data: { session } } = await supabase.auth.getSession();
+  const { data: { session } } = await supabaseClient.auth.getSession();
 
   if(!session){
     showStatus(status, "Prvo se prijavite ili registrujte nalog.");
@@ -569,7 +569,7 @@ document.getElementById("listingForm").addEventListener("submit", async e => {
     payload.cena = Number.isFinite(number) ? number : null;
   }
 
-  const { error } = await supabase.from("oglasi").insert(payload);
+  const { error } = await supabaseClient.from("oglasi").insert(payload);
 
   if(error){
     console.error(error);
@@ -582,12 +582,12 @@ document.getElementById("listingForm").addEventListener("submit", async e => {
   document.getElementById("nemaFirmu").checked = true;
 });
 
-supabase.auth.onAuthStateChange((_event, session) => {
+supabaseClient.auth.onAuthStateChange((_event, session) => {
   updateAuthUI(session);
 });
 
 (async function init(){
-  const { data: { session } } = await supabase.auth.getSession();
+  const { data: { session } } = await supabaseClient.auth.getSession();
   updateAuthUI(session);
   await loadListings();
 })();
